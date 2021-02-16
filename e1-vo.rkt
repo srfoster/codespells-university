@@ -26,7 +26,20 @@
     (list "trucks" #|were dispatched. Their mission? To arrive by midnight on July 8th carrying a quarter of a million|# 
 	  @img{trucks.png})
     (list "what" 
-	  @t{what})))
+	  @img{mystery-box.png})
+    (list "a" 
+	  @img{guns.png})
+    (list "b" 
+	  @img{refugees.png})
+    (list "c" 
+	  @img{gandalfs.png})
+    (list "d" 
+	  @img{books.png})
+    (list "harry" 
+	  @img{harry-potter-cover.png})
+    (list "fire" 
+	  @img{harry-potter-cover.png})
+    ))
 
 (define words-to-keep
   (apply keep-words (json-file->transcribed-words "e1-vo.json") 
@@ -35,7 +48,7 @@
 (render
   #:to "output.mp4"
   (trim
-    #:duration 20
+    #:duration 40
 
     (apply (curry slideshow #:end 20)
 	   (flatten
@@ -49,7 +62,7 @@
 	       (range (length words-to-keep))))))
 
   (atrim
-    #:duration 20
+    #:duration 40
     (volume
       #:volume 1
       (file-source
