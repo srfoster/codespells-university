@@ -1,8 +1,16 @@
 #lang at-exp racket
 
+;TODO:
+; * Make intro audio work
+; * Make render and -mapping work better
+; * Finish rest of main content
+;   - Make json transcript easier to work with
+
 (require editing
 	 editing/aws-transcription/main
-	 "./lib.rkt")
+	 "./lib.rkt"
+	 "./common/main.rkt"
+	 )
 
 (working-directory "workspace")
 
@@ -35,6 +43,10 @@
 	  @img{gandalfs.png})
     (list "d" 
 	  @img{books.png})
+    (list "c" 
+	  @img{gandalfs.png})
+    (list "d" 
+	  @img{books.png})
     (list "harry" 
 	  @img{harry-potter-cover.png})
     (list "fire" 
@@ -45,27 +57,33 @@
   (apply keep-words (json-file->transcribed-words "e1-vo.json") 
 	 (map first slides)))
 
-(render
+
+(define all-slides
+  (apply (curry slideshow #:end 20)
+	 (flatten
+	   (map 
+	     (lambda (tw i)
+	       (list 
+		 (transcribed-word-end-time tw)
+		 (second (list-ref slides i)))) 
+
+	     words-to-keep
+	     (range (length words-to-keep))))))
+
+(define content all-slides)
+
+(define voice-over
+  (volume 
+    (file-source "e1-vo.mp4")))
+
+(define main
+  (episode content voice-over))
+
+;(debug? #t)
+(new-render
   #:to "output.mp4"
-  (trim
-    #:duration 40
+  #:show? #f
+  main)
 
-    (apply (curry slideshow #:end 20)
-	   (flatten
-	     (map 
-	       (lambda (tw i)
-		 (list 
-		   (transcribed-word-end-time tw)
-		   (second (list-ref slides i)))) 
-
-	       words-to-keep
-	       (range (length words-to-keep))))))
-
-  (atrim
-    #:duration 40
-    (volume
-      #:volume 1
-      (file-source
-	"e1-vo.mp4"))))
-
+#;
 (system "xdg-open workspace/output.mp4")

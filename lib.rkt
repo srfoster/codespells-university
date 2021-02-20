@@ -62,7 +62,7 @@
   (apply concat 
 	 (map 
 	   (lambda (slide seconds)
-	     (trim #:seconds seconds (scale 
+	     (trim #:seconds seconds (scale/pad
 				       #:w 640
 				       #:h 480
 				       slide))) 
