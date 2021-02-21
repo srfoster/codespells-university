@@ -27,6 +27,7 @@
     (list "in" #|the summer of the year 2000, a fleet of 100|# 
 	  @t{In the summer of the year 2000,
 	  a fleet of 1000})
+
     (list "airplanes" #|and 9000|# 
 	  @img{plane.png})
     (list "trucks" #|were dispatched. Their mission? To arrive by midnight on July 8th carrying a quarter of a million|# 
@@ -47,8 +48,41 @@
 	  @img{books.png})
     (list "harry" 
 	  @img{harry-potter-cover.png})
-    (list "fire" 
-	  @img{harry-potter-cover.png})
+    (list "Magic" 
+	  @img{plane.png})
+
+    (list "Lord" 
+	  @img{trucks.png})
+
+    (list "magic" 
+	  @img{plane.png})
+
+    (list "genetic" 
+	  @img{trucks.png})
+
+    (list "advanced" 
+	  @img{plane.png})
+
+    (list "connection" 
+	  @img{trucks.png})
+
+    (list "spirits" 
+	  @img{plane.png})
+
+    (list "force" 
+	  @img{trucks.png})
+
+    (list "midichloreans" 
+	  @img{plane.png})
+
+    (list "across" 
+	  @img{trucks.png})
+
+    (list "generations" 
+	  @img{plane.png})
+
+    (list "force" 
+	  @img{trucks.png})
     ))
 
 (define words-to-keep
@@ -83,7 +117,7 @@
   #:to "output.mp4"
   #:show? #t
 
-  (trim #:duration 10 main)
+  (trim #:duration 40 main)
 )
 
 |#
