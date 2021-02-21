@@ -28,8 +28,8 @@
 
 
 (define (episode main-content
-		 voice-over)
-  (define d 10)
+		 voice-over
+                 #:duration [d 60])
 
   (new-concat 
     #:n 2
