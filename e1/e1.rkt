@@ -48,221 +48,222 @@
 	  @img{books.png})
     (list "harry" 
 	  @img{harry-potter-cover.png})
+
     (list "500" 
-	  @img{trucks.png})
+	  @img{bookstore.jpg})
 
     (list "Magic" 
-	  @img{plane.png})
+	  @img{harry-potter-spell.png})
 
     (list "Lord" 
-	  @img{trucks.png})
+	  @img{gandalf-spell.png})
 
     (list "magic" 
-	  @img{plane.png})
+	  @img{magneto.png})
 
     (list "genetic" 
-	  @img{trucks.png})
+	  @img{dna.png})
 
     (list "advanced" 
-	  @img{plane.png})
+	  @img{iron-man.png})
 
     (list "connection" 
-	  @img{trucks.png})
+	  @img{buffy.png})
 
     (list "spirits" 
-	  @img{plane.png})
+	  @img{seance.png})
 
     (list "force" 
-	  @img{trucks.png})
+	  @img{yoda.png})
 
     (list "midichloreans" 
-	  @img{plane.png})
+	  @img{anikan.png})
    
     (list "word" 
-	  @img{plane.png})
+	  @img{magic-wordcloud.png})
 
     (list "across" 
-	  @img{trucks.png})
+	  @img{world.png})
 
     (list "generations" 
-	  @img{plane.png})
+	  @img{wizards.png})
 
     (list "1692" 
-	  @img{trucks.png})
+	  @img{witch-trial.png})
 
     (list "accused" 
-	  @img{plane.png})
+	  @img{monty-python1.png})
    
     (list "30" 
-	  @img{trucks.png})
+	  @img{monty-python2.png})
 
     (list "guilty" 
-	  @img{plane.png})
+	  @img{guilty.png})
    
     (list "executed" 
-	  @img{trucks.png})
+	  @img{hangings.png})
 
     (list "YouTube" 
-	  @img{plane.png})
+	  @img{youtube.png})
    
     (list "self" 
-	  @img{trucks.png})
+	  @img{fancy-car.png})
 
     (list "coronavirus" 
-	  @img{plane.png})
+	  @img{vaccines.png})
 
     (list "computer" 
-	  @img{trucks.png})
+	  @img{codespells-2.png})
    
     (list "true" 
-	  @img{plane.png})
+	  @img{true-belief.png})
 
     (list "antiquated" 
-	  @img{plane.png})
+	  @img{horse-and-buggy.png})
    
     (list "children" 
-	  @img{trucks.png})
+	  @img{magic-show.png})
 
     (list "primitive" 
-	  @img{plane.png})
+	  @img{early-human.png})
    
     (list "crystals" 
-	  @img{trucks.png})
+	  @img{crystals.png})
 
     (list "mounting" 
-	  @img{plane.png})
+	  @img{science-meme.png})
    
     (list "hardwired" 
-	  @img{trucks.png})
+	  @img{brain-magic.png})
 
     (list "wait" 
-	  @img{plane.png})
+	  @img{gollum.png})
    
     (list "question" 
-	  @img{trucks.png})
+	  @img{test-taker.png})
 
     (list "cockroaches" 
-	  @img{plane.png})
+	  @img{cockroaches.png})
 
     (list "photograph" 
-	  @img{trucks.png})
+	  @img{family-photo.png})
 
     (list "Question" 
-	  @img{plane.png})
+	  @img{test-taker2.png})
    
     (list "rather" 
-	  @img{trucks.png})
+	  @img{sleepover.png})
 
     (list "luxurious" 
-	  @img{plane.png})
+	  @img{big-house.png})
 
     (list "murdered" 
-	  @img{trucks.png})
+	  @img{caution-tape.png})
 
     (list "grimy" 
-	  @img{plane.png})
+	  @img{bus-station.png})
    
     (list "Question" 
-	  @img{trucks.png})
+	  @img{test-taker3.png})
 
     (list "ride" 
-	  @img{plane.png})
+	  @img{speeding-car.png})
 
     (list "yell" 
-	  @img{trucks.png})
+	  @img{mountains.png})
 
     (list "question" 
-	  @img{plane.png})
+	  @img{test-taker4.png})
 
     (list "laundered" 
-	  @img{trucks.png})
+	  @img{pjs.png})
 
     (list "Charles" 
-	  @img{plane.png})
+	  @img{mug-shot.png})
 
     (list "nickel" 
-	  @img{trucks.png})
+	  @img{nickel.png})
 
     (list "think" 
-	  @img{plane.png})
+	  @img{two-buttons.png})
    
     (list "stabbing" 
-	  @img{trucks.png})
+	  @img{family-photo.png})
 
     (list "staying" 
-	  @img{plane.png})
+	  @img{big-house.png})
 
     (list "gross" 
 	  @img{trucks.png})
 
     (list "say" 
-	  @img{plane.png})
+	  @img{no-magic.png})
    
     (list "behind" 
-	  @img{trucks.png})
+	  @img{no-witches.png})
 
     (list "irrational" 
-	  @img{plane.png})
+	  @img{gut-feelings.png})
 
     (list "let" 
-	  @img{trucks.png})
+	  @img{heart-brain-scale.png})
 
     (list "said" 
-	  @img{plane.png})
+	  @img{heart-vs-brain.png})
 
     (list "growing" 
-	  @img{trucks.png})
+	  @img{folders.png})
 
     (list "conservatives" 
-	  @img{plane.png})
+	  @img{maga-hat.png})
 
     (list "liberals" 
-	  @img{trucks.png})
+	  @img{bernie.png})
 
     (list "red" 
-	  @img{plane.png})
+	  @img{donkey-elephant.png})
    
     (list "antivaxxers" 
-	  @img{trucks.png})
+	  @img{anti-vaxxers.png})
 
     (list "scientists" 
-	  @img{plane.png})
+	  @img{fauci.png})
 
     (list "conspiracy" 
-	  @img{trucks.png})
+	  @img{info-wars.png})
 
     (list "skeptics" 
-	  @img{plane.png})
+	  @img{magnifying-glass.png})
    
     (list "explained" 
-	  @img{trucks.png})
+	  @img{scales.png})
 
     (list "grounds" 
-	  @img{plane.png})
+	  @img{may-we-burn-her.png})
 
     (list "codespells" 
-	  @img{trucks.png})
+	  @img{code-spells.png})
 
     (list "powerful" 
-	  @img{plane.png})
+	  @img{potter-musical.png})
 
     (list "good" 
-	  @img{trucks.png})
+	  @img{patronus.png})
 
     (list "real" 
-	  @img{plane.png})
+	  @img{gravity.png})
 
     (list "next" 
 	  @img{trucks.png})
 
     (list "evolutionary" 
-	  @img{plane.png})
+	  @img{evolution.png})
 
     (list "goal" 
 	  @img{trucks.png})
 
     (list "reality" 
-	  @img{plane.png})
+	  @img{witchcraft.png})
 
 	 ))
 
@@ -292,7 +293,7 @@
 
 (define main
   (episode 
-    #:duration 200
+    #:duration 220
     content voice-over))
 
 ;(debug? #t)
