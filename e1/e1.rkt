@@ -1,46 +1,65 @@
 #lang at-exp racket
 
 ;TODO:
-; * Finish rest of main content
-;   - Make json transcript easier to work with
+; * Refactor this file.  Only the words and beats...
+; * Decide on paper pg, scroll or not
+; * Fancy mascot animations...
 
 (require editing
 	 editing/aws-transcription/main
 	 "../common/lib.rkt"
 	 "../common/main.rkt"
-	 )
+	 (prefix-in i: 2htdp/image))
 
 (working-directory "workspace")
+(current-width  1920)
+(current-height 1080)
 
 (define (t . s)
   (text (trim #:duration 10
-	      (blank #:w 640 #:h 480))
+	      (blank #:w (current-width) #:h (current-height)
+		     #:color "0x00000000"
+		     ))
+	#:fontcolor "black"
+	#:fontsize 100
+	#:fontfile henny-penny-font
 	#:text (string-join s "")))
+
 
 (define (img i)
   (trim #:duration 60 ;Will get further clipped, 
 	(file-source #:args "-loop 1"
 		     i)))
-	 
+
 (define slides
   (list
     (list "in" #|the summer of the year 2000, a fleet of 100|# 
-	  @t{In the summer of the year 2000,
-	  a fleet of 1000})
+	  @t{Summer 2000})
 
-    (list "airplanes" #|and 9000|# 
+    (list "airplanes" 
 	  @img{plane.png})
-    (list "trucks" #|were dispatched. Their mission? To arrive by midnight on July 8th carrying a quarter of a million|# 
+    (list "trucks" 
 	  @img{trucks.png})
+    (list "mission" 
+	  @t{Mission?})
     (list "what" 
-	  @img{mystery-box.png})
+	  (image-source 
+	    (i:beside mystery-box mystery-box mystery-box )))
     (list "a" 
+	  @t{A})
+    (list "quarter" 
 	  @img{guns.png})
     (list "b" 
+	  @t{B})
+    (list "quarter" 
 	  @img{refugees.png})
     (list "c" 
+	  @t{C})
+    (list "quarter" 
 	  @img{gandalfs.png})
     (list "d" 
+	  @t{D})
+    (list "quarter" 
 	  @img{books.png})
     (list "c" 
 	  @img{gandalfs.png})
@@ -48,6 +67,9 @@
 	  @img{books.png})
     (list "harry" 
 	  @img{harry-potter-cover.png})
+
+    (list "just" 
+	  @t{0.05%})
 
     (list "500" 
 	  @img{bookstore.jpg})
@@ -68,7 +90,7 @@
 	  @img{iron-man.png})
 
     (list "connection" 
-	  @img{buffy.png})
+	  @img{willow.jpg})
 
     (list "spirits" 
 	  @img{seance.png})
@@ -77,28 +99,49 @@
 	  @img{yoda.png})
 
     (list "midichloreans" 
-	  @img{anikan.png})
+	  (image-source
+	    (i:above 
+	      (i:bitmap "workspace/anikan.png") 
+	      (i:text "Midi-chlorians?" 40 'black)))) 
    
     (list "word" 
 	  @img{magic-wordcloud.png})
 
     (list "across" 
-	  @img{world.png})
+	  (image-source 
+	    world))
+
+    (list "cultures" 
+	  (image-source
+	    (i:beside 
+	      world
+	      group
+	      )))
 
     (list "generations" 
-	  @img{wizards.png})
+	  (image-source
+	    (i:beside 
+	      world
+	      group
+	      generations
+	      )))
 
     (list "1692" 
 	  @img{witch-trial.png})
 
+    #;
     (list "accused" 
 	  @img{monty-python1.png})
    
-    (list "30" 
-	  @img{monty-python2.png})
+    (list "accused" 
+	  (image-source
+	    (i:bitmap/file "workspace/monty-python2.png")))
 
     (list "guilty" 
-	  @img{guilty.png})
+	  (image-source
+	    (i:overlay
+	      (i:bitmap/file "workspace/guilty.png")
+	      (i:bitmap/file "workspace/monty-python2.png"))))
    
     (list "executed" 
 	  @img{hangings.png})
@@ -127,29 +170,35 @@
     (list "primitive" 
 	  @img{early-human.png})
    
-    (list "crystals" 
+    (list "weird" 
 	  @img{crystals.png})
 
     (list "mounting" 
-	  @img{science-meme.png})
+	  @img{enchanted-america.jpg})
    
+    (list "one" 
+	  (image-source
+	    brain))
+
     (list "hardwired" 
-	  @img{brain-magic.png})
+	  (image-source
+	    (i:beside brain
+		      evolution)))
 
     (list "wait" 
 	  @img{gollum.png})
    
     (list "question" 
-	  @img{test-taker.png})
+	  @t{Question 1})
 
     (list "cockroaches" 
-	  @img{cockroaches.png})
+	  @img{cockroaches.webp})
 
     (list "photograph" 
 	  @img{family-photo.png})
 
     (list "Question" 
-	  @img{test-taker2.png})
+	  @t{Question 2})
    
     (list "rather" 
 	  @img{sleepover.png})
@@ -158,13 +207,17 @@
 	  @img{big-house.png})
 
     (list "murdered" 
-	  @img{caution-tape.png})
+	  (image-source
+	    (i:overlay
+	      (i:bitmap/file "workspace/caution-tape.png")
+	      (i:bitmap/file "workspace/big-house.png")
+	      )))
 
     (list "grimy" 
 	  @img{bus-station.png})
    
     (list "Question" 
-	  @img{test-taker3.png})
+	  @t{Question 3})
 
     (list "ride" 
 	  @img{speeding-car.png})
@@ -173,10 +226,10 @@
 	  @img{mountains.png})
 
     (list "question" 
-	  @img{test-taker4.png})
+	  @t{Question 4})
 
     (list "laundered" 
-	  @img{pjs.png})
+	  @img{pajamas.jpg})
 
     (list "Charles" 
 	  @img{mug-shot.png})
@@ -191,25 +244,38 @@
 	  @img{family-photo.png})
 
     (list "staying" 
-	  @img{big-house.png})
+	  (image-source
+	    (i:overlay
+	      (i:bitmap/file "workspace/caution-tape.png")
+	      (i:bitmap/file "workspace/big-house.png")
+	      )))
 
     (list "gross" 
-	  @img{trucks.png})
+	  @t{gross})
 
     (list "say" 
 	  @img{no-magic.png})
+
+    (list "magical"
+	  (image-source
+	    witch))
    
     (list "behind" 
-	  @img{no-witches.png})
+	  (image-source
+	    (i:overlay banned witch)))
 
     (list "irrational" 
-	  @img{gut-feelings.png})
+	  (image-source guts))
 
     (list "let" 
-	  @img{heart-brain-scale.png})
+	  (image-source
+	    (i:beside guts brain)))
 
     (list "said" 
-	  @img{heart-vs-brain.png})
+	  (image-source
+	    (i:beside guts 
+		      (i:scale 2 scales) 
+		      brain)))
 
     (list "growing" 
 	  @img{folders.png})
@@ -221,7 +287,13 @@
 	  @img{bernie.png})
 
     (list "red" 
-	  @img{donkey-elephant.png})
+	  (image-source
+	    (i:bitmap/file "workspace/donkey-elephant.png")))
+
+    (list "blue" 
+	  (image-source
+	    (i:flip-horizontal
+	      (i:bitmap/file "workspace/donkey-elephant.png"))))
    
     (list "antivaxxers" 
 	  @img{anti-vaxxers.png})
@@ -236,7 +308,7 @@
 	  @img{magnifying-glass.png})
    
     (list "explained" 
-	  @img{scales.png})
+	  (image-source scales))
 
     (list "grounds" 
 	  @img{may-we-burn-her.png})
@@ -251,19 +323,21 @@
 	  @img{patronus.png})
 
     (list "real" 
-	  @img{gravity.png})
-
-    (list "next" 
-	  @img{trucks.png})
+	  @img{god-adam.jpg})
 
     (list "evolutionary" 
-	  @img{evolution.png})
+	  (image-source
+	    evolution-2))
 
-    (list "goal" 
-	  @img{trucks.png})
+    (list "ultimate" 
+	  (image-source
+	    (i:overlay banned witch)))
+
+    (list "real" 
+	  (image-source witch))
 
     (list "reality" 
-	  @img{witchcraft.png})
+	  @img{earth.jpg})
 
 	 ))
 
@@ -289,14 +363,18 @@
 
 (define voice-over
   (volume 
-    (file-source "e1-vo.mp4")))
+    (file-source "e1-vo.mp3")))
 
 (define main
   (episode 
     #:duration 220
     content voice-over))
 
+;(text #f #:text "test % ...")
 ;(debug? #t)
+(when (file-exists? "workspace/output.mp4")
+  (delete-file "workspace/output.mp4"))
+
 (new-render
   #:to "output.mp4"
   #:show? #t
@@ -306,5 +384,4 @@
   #;
   (trim #:duration 40 main)
 )
-
 
